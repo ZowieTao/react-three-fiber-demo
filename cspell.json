@@ -1,7 +1,13 @@
 {
   "version": "0.1",
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
-  "dictionaries": ["typescript", "node", "html", "css", "fonts"],
+  "dictionaries": [
+    "typescript",
+    "node",
+    "html",
+    "css",
+    "fonts"
+  ],
   "ignorePaths": [
     "tsconfig.tsbuildinfo",
     "pnpm-lock.yaml",
@@ -13,6 +19,7 @@
   "words": [
     "alicloud",
     "atrule",
+    "autoscaler",
     "Backlinks",
     "bilibili",
     "cacheable",
@@ -22,7 +29,10 @@
     "crosslog",
     "Darkmode",
     "datasource",
+    "drei",
+    "envsubst",
     "Frontmatter",
+    "gitlab",
     "gtag",
     "headlessui",
     "heroicons",
@@ -30,6 +40,9 @@
     "jike",
     "jsonfeed",
     "Katex",
+    "keybase",
+    "keymap",
+    "keyval",
     "langchain",
     "lastmod",
     "mantine",
@@ -41,7 +54,6 @@
     "nocheck",
     "nprogress",
     "onclickoutside",
-    "envsubst",
     "OPENAI",
     "pixiv",
     "playstation",
@@ -70,14 +82,12 @@
     "webxr",
     "XCHAR",
     "xiaoyuzhou",
-    "zustand",
-    "keymap",
-    "autoscaler",
-    "keyval",
-    "gitlab",
-    "keybase"
+    "zustand"
   ],
-  "ignoreRegExpList": ["/@servie/", "/[A-Za-z0-9]{46,59}/"],
+  "ignoreRegExpList": [
+    "/@servie/",
+    "/[A-Za-z0-9]{46,59}/"
+  ],
   "ignoreWords": [
     "mdast",
     "clsx",

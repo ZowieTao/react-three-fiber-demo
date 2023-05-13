@@ -100,5 +100,6 @@ module.exports = withBundleAnalyzer(
     },
 
     serverRuntimeConfig: {},
+    // transpilePackages: ["three"],
   }),
 )
