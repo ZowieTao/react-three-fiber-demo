@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import "../css/main.css"
 import Providers from "./provider"
 
 const APP_NAME = "NEXTJS APP"

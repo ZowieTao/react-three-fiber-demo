@@ -7,15 +7,8 @@ export default async function HomeLayout({
 }) {
   return (
     <div>
-      home layout:
-      <div
-        style={{
-          margin: "10px",
-        }}
-      >
-        {children}
-        {authModal}
-      </div>
+      {children}
+      {authModal}
     </div>
   )
 }
