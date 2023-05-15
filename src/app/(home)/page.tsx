@@ -17,6 +17,9 @@ async function Home() {
       <Center>
         <Link href="/banana">banana</Link>
       </Center>
+      <Center>
+        <Link href="/ghibli-tree">ghibli-tree</Link>
+      </Center>
     </Center>
   )
 }
