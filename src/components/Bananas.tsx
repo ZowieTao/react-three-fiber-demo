@@ -1,17 +1,35 @@
 "use client"
 
+// https://github.com/pmndrs/react-postprocessing
+// https://github.com/vanruesc/postprocessing
+import dynamic from "next/dynamic"
 import { useRef, useState } from "react"
-import * as THREE from "three"
+import { randFloat, randFloatSpread } from "three/src/math/MathUtils"
 
 // https://github.com/pmndrs/drei
 import { Detailed, Environment, useGLTF } from "@react-three/drei"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
-// https://github.com/pmndrs/react-postprocessing
-// https://github.com/vanruesc/postprocessing
-import { DepthOfField, EffectComposer } from "@react-three/postprocessing"
+
+const DepthOfField = dynamic(
+  () =>
+    import("@react-three/postprocessing").then((module) => module.DepthOfField),
+  {
+    ssr: false,
+  },
+)
+
+const EffectComposer = dynamic(
+  () =>
+    import("@react-three/postprocessing").then(
+      (module) => module.EffectComposer,
+    ),
+  {
+    ssr: false,
+  },
+)
 
 function Banana({ index, z, speed }) {
-  const ref = useRef()
+  const ref = useRef<any>()
   // useThree gives you access to the R3F state model
   const { viewport, camera } = useThree()
   // getCurrentViewport is a helper that calculates the size of the viewport
@@ -19,17 +37,19 @@ function Banana({ index, z, speed }) {
   // useGLTF is an abstraction around R3F's useLoader(GLTFLoader, url)
   // It can automatically handle draco and meshopt-compressed assets without you having to
   // worry about binaries and such ...
+
+  // @ts-ignore
   const { nodes, materials } = useGLTF("/assets/glb/banana-v1-transformed.glb")
   // By the time we're here the model is loaded, this is possible through React suspense
 
   // Local component state, it is safe to mutate because it's fixed data
   const [data] = useState({
     // Randomly distributing the objects along the vertical
-    y: THREE.MathUtils.randFloatSpread(height * 2),
+    y: randFloatSpread(height * 2),
     // This gives us a random value between -1 and 1, we will multiply it with the viewport width
-    x: THREE.MathUtils.randFloatSpread(2),
+    x: randFloatSpread(2),
     // How fast objects spin, randFlost gives us a value between min and max, in this case 8 and 12
-    spin: THREE.MathUtils.randFloat(8, 12),
+    spin: randFloat(8, 12),
     // Some random rotations, Math.PI represents 360 degrees in radian
     rX: Math.random() * Math.PI,
     rZ: Math.random() * Math.PI,
@@ -60,6 +80,7 @@ function Banana({ index, z, speed }) {
   // Using drei's detailed is a nice trick to reduce the vertex count because
   // we don't need high resolution for objects in the distance. The model contains 3 decimated meshes ...
   return (
+    // @ts-ignore
     <Detailed ref={ref} distances={[0, 65, 80]}>
       <mesh
         geometry={nodes.banana_high.geometry}
@@ -111,6 +132,7 @@ export default function Bananas({
       )}
       <Environment preset="sunset" />
       {/* Multisampling (MSAA) is WebGL2 antialeasing, we don't need it (faster) */}
+
       <EffectComposer multisampling={0}>
         <DepthOfField
           target={[0, 0, 60]}

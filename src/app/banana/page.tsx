@@ -16,7 +16,7 @@ export default function Banana() {
       }}
     >
       <Suspense fallback={null}>
-        <Bananas />
+        <Bananas speed={speed} />
         <FadeIn />
       </Suspense>
       <LeftMiddle>

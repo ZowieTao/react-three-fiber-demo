@@ -55,7 +55,6 @@ const lastCommitCommand = "git rev-parse HEAD"
 
 /** @type {import('next').NextConfig} */
 module.exports = withBundleAnalyzer(
-  // @ts-ignore
   withPWA({
     env: {
       APP_DESCRIPTION: pkg.description,
