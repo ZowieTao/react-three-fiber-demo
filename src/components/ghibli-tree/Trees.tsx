@@ -20,6 +20,7 @@ export const Trees = forwardRef((props: any, ref) => {
     return gradientMap
   }, [])
 
+  // @ts-ignore
   const { nodes } = useGLTF("/assets/glb/trees.glb")
 
   const uniforms = useMemo(
