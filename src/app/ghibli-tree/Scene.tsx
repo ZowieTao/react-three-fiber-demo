@@ -27,7 +27,7 @@ export function Box(props: ThreeElements["mesh"]) {
 }
 
 export default function Scene() {
-  const refTrees = useRef<any>()
+  const refTrees = useRef(null)
 
   useFrame(() => {
     const { current: group } = refTrees
@@ -55,6 +55,15 @@ export default function Scene() {
           new Color("#33594e").convertLinearToSRGB(),
           new Color("#234549").convertLinearToSRGB(),
           new Color("#1e363f").convertLinearToSRGB(),
+        ]}
+      />
+      <Trees
+        position={[0, 0, 4]}
+        colors={[
+          new Color("#4a8d7e").convertLinearToSRGB(),
+          new Color("#377f6a").convertLinearToSRGB(),
+          new Color("#184f52").convertLinearToSRGB(),
+          new Color("#143b36").convertLinearToSRGB(),
         ]}
       />
     </>
