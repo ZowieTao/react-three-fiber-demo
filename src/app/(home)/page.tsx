@@ -20,6 +20,9 @@ async function Home() {
       <Center>
         <Link href="/ghibli-tree">ghibli-tree</Link>
       </Center>
+      <Center>
+        <Link href="/scroll-controls">scroll-controls</Link>
+      </Center>
     </Center>
   )
 }

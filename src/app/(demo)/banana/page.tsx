@@ -1,9 +1,9 @@
 "use client"
 
-import React, { Suspense, useState } from "react"
+import { Suspense, useState } from "react"
 
-import Bananas from "../../components/Bananas"
-import { FadeIn, LeftMiddle } from "../../components/Styles"
+import Bananas from "~/components/Bananas"
+import { FadeIn, LeftMiddle } from "~/components/Styles"
 
 export default function Banana() {
   const [speed, set] = useState(1)

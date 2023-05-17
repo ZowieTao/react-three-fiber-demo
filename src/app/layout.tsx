@@ -3,8 +3,8 @@ import { Metadata } from "next"
 import "../css/main.css"
 import Providers from "./provider"
 
-const APP_NAME = "NEXTJS APP"
-const APP_SLOGAN = ""
+const APP_NAME = "Zowie's Three Lab"
+const APP_SLOGAN = "find and build"
 const APP_DESCRIPTION = ""
 const SITE_URL = ""
 
