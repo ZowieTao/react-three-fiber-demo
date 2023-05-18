@@ -23,6 +23,9 @@ async function Home() {
       <Center>
         <Link href="/scroll-controls">scroll-controls</Link>
       </Center>
+      <Center>
+        <Link href="/stage-presets">stage-presets</Link>
+      </Center>
     </Center>
   )
 }
