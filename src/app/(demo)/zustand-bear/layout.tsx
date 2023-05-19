@@ -1,4 +1,4 @@
-import "~/css/floating-laptop.css"
+import "~/css/zustand-bear.css"
 
 export default function ZustandBearLayout({
   children,
