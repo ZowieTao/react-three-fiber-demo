@@ -16,6 +16,7 @@ module.exports = {
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
     "react/no-array-index-key": "error",
+    "arrow-body-style": ["error", "always"],
     "react/self-closing-comp": [
       "error",
       {
