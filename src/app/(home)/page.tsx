@@ -32,6 +32,9 @@ async function Home() {
       <Center>
         <Link href="/floating-laptop">floating laptop</Link>
       </Center>
+      <Center>
+        <Link href="/zustand-bear">zustand bear</Link>
+      </Center>
     </Center>
   )
 }

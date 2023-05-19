@@ -1,6 +1,6 @@
 import "~/css/floating-laptop.css"
 
-export default function FloatingLaptopLayout({
+export default function ZustandBearLayout({
   children,
 }: {
   children?: React.ReactNode
