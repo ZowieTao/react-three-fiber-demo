@@ -26,7 +26,9 @@ export default function Banana() {
           max="10"
           value={speed}
           step="1"
-          onChange={(e) => set(Number(e.target.value))}
+          onChange={(e) => {
+            return set(Number(e.target.value))
+          }}
         />
       </LeftMiddle>
     </div>

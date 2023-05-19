@@ -43,7 +43,9 @@ export default function ScrollControlsPage() {
 
 function Composition({ ...props }) {
   const scroll = useScroll()
-  const { width, height } = useThree((state) => state.viewport)
+  const { width, height } = useThree((state) => {
+    return state.viewport
+  })
   const [group, mbp16, mbp14, keyLight, stripLight, fillLight, left, right] =
     useRefs<any>()
 

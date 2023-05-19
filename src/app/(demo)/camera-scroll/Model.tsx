@@ -10,22 +10,31 @@ import { useFrame } from "@react-three/fiber"
 const color = new THREE.Color()
 
 export default function Model({ scroll, ...props }) {
-  const group = useRef()
+  const group = useRef<any>()
   // @ts-ignore
   const { nodes, materials, animations } = useGLTF("/assets/glb/model.glb")
+
   const { actions } = useAnimations(animations, group)
-  const [hovered, set] = useState()
+
+  const [hovered, setHovered] = useState<boolean>()
+
   const extras = {
     receiveShadow: true,
     castShadow: true,
     "material-envMapIntensity": 0.2,
   }
-  useEffect(() => void (actions["CameraAction.005"].play().paused = true), [])
+
+  useEffect(() => {
+    return void (actions["CameraAction.005"].play().paused = true)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   useEffect(() => {
     if (hovered)
       group.current.getObjectByName(hovered).material.color.set("white")
     document.body.style.cursor = hovered ? "pointer" : "auto"
   }, [hovered])
+
   useFrame((state) => {
     actions["CameraAction.005"].time = THREE.MathUtils.lerp(
       actions["CameraAction.005"].time,
@@ -48,8 +57,12 @@ export default function Model({ scroll, ...props }) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group
-        onPointerOver={(e) => (e.stopPropagation(), set(e.object.name))}
-        onPointerOut={(e) => (e.stopPropagation(), set(null))}
+        onPointerOver={(e) => {
+          return e.stopPropagation(), setHovered(!!e.object.name)
+        }}
+        onPointerOut={(e) => {
+          return e.stopPropagation(), setHovered(null)
+        }}
         position={[0.06, 4.04, 0.35]}
         scale={[0.25, 0.25, 0.25]}
       >

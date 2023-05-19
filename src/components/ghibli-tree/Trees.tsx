@@ -23,8 +23,8 @@ export const Trees = forwardRef((props: any, ref) => {
   // @ts-ignore
   const { nodes } = useGLTF("/assets/glb/trees.glb")
 
-  const uniforms = useMemo(
-    () => ({
+  const uniforms = useMemo(() => {
+    return {
       colorMap: {
         value: props.colors,
       },
@@ -32,9 +32,8 @@ export const Trees = forwardRef((props: any, ref) => {
         value: [0.6, 0.35, 0.001],
       },
       lightPosition: { value: new Vector3(15, 15, 15) },
-    }),
-    [props.colors],
-  )
+    }
+  }, [props.colors])
 
   return (
     <group {...props} ref={ref} dispose={null}>
