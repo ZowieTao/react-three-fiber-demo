@@ -31,7 +31,9 @@ export default function Modal({ children }) {
   useEffect(() => {
     document.addEventListener("keydown", onKeyDown)
 
-    return () => document.removeEventListener("keydown", onKeyDown)
+    return () => {
+      return document.removeEventListener("keydown", onKeyDown)
+    }
   }, [onKeyDown])
 
   return (

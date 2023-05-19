@@ -16,8 +16,20 @@ import { GroupProps, useFrame, useThree } from "@react-three/fiber"
 
 import Canvas from "~/components/Canvas"
 
-const rsqw = (t: number, delta = 0.1, a = 1, f = 1 / (2 * Math.PI)) =>
-  (a / Math.atan(1 / delta)) * Math.atan(Math.sin(2 * Math.PI * t * f) / delta)
+/**
+ * Smoothly interpolate a number from x toward y in a spring-like
+ *
+ * @param t Range between 0 to 1
+ * @param delta accent rate relate to t
+ * @param a The limit range of about return value [0, a)
+ * @param f
+ */
+const rsqw = (t: number, delta = 0.1, a = 1, f = 1 / (2 * Math.PI)) => {
+  return (
+    (a / Math.atan(1 / delta)) *
+    Math.atan(Math.sin(2 * Math.PI * t * f) / delta)
+  )
+}
 
 export default function ScrollControlsPage() {
   return (
@@ -31,7 +43,9 @@ export default function ScrollControlsPage() {
 
 function Composition({ ...props }) {
   const scroll = useScroll()
-  const { width, height } = useThree((state) => state.viewport)
+  const { width, height } = useThree((state) => {
+    return state.viewport
+  })
   const [group, mbp16, mbp14, keyLight, stripLight, fillLight, left, right] =
     useRefs<any>()
 

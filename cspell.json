@@ -17,6 +17,10 @@
     "*.sql"
   ],
   "words": [
+    "ˈtɜːrbaɪn",
+    "ˈtɜːrbɪn",
+    "ˈt͡sɛpəliːn",
+    "akshatmittal",
     "alicloud",
     "aluminium",
     "atrule",
@@ -52,6 +56,7 @@
     "keyval",
     "langchain",
     "lastmod",
+    "lerp",
     "mantine",
     "mingcute",
     "MINTABLE",
@@ -72,6 +77,9 @@
     "Raycast",
     "rehype",
     "rehyper",
+    "rocchetto",
+    "Roundcube",
+    "rsqw",
     "scroller",
     "sortablejs",
     "Strikethrough",
@@ -83,6 +91,7 @@
     "tokenomics",
     "Topbar",
     "trivago",
+    "tyrbē",
     "Unfollow",
     "unidata",
     "unist",
@@ -91,7 +100,8 @@
     "webxr",
     "XCHAR",
     "xiaoyuzhou",
-    "zustand"
+    "zustand",
+    "τύρβη"
   ],
   "ignoreRegExpList": [
     "/@servie/",

@@ -11,18 +11,22 @@ import { Detailed, Environment, useGLTF } from "@react-three/drei"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
 
 const DepthOfField = dynamic(
-  () =>
-    import("@react-three/postprocessing").then((module) => module.DepthOfField),
+  () => {
+    return import("@react-three/postprocessing").then((module) => {
+      return module.DepthOfField
+    })
+  },
   {
     ssr: false,
   },
 )
 
 const EffectComposer = dynamic(
-  () =>
-    import("@react-three/postprocessing").then(
-      (module) => module.EffectComposer,
-    ),
+  () => {
+    return import("@react-three/postprocessing").then((module) => {
+      return module.EffectComposer
+    })
+  },
   {
     ssr: false,
   },
@@ -105,7 +109,9 @@ export default function Bananas({
   speed = 1,
   count = 80,
   depth = 80,
-  easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)),
+  easing = (x) => {
+    return Math.sqrt(1 - Math.pow(x - 1, 2))
+  },
 }) {
   return (
     // No need for antialias (faster), dpr clamps the resolution to 1.5 (also faster than full resolution)
@@ -128,7 +134,7 @@ export default function Bananas({
       {/* Using cubic easing here to spread out objects a little more interestingly, i wanted a sole big object up front ... */}
       {Array.from(
         { length: count },
-        (_, i) => <Banana key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed} /> /* prettier-ignore */,
+        (_, i) => {return <Banana key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed} />} /* prettier-ignore */,
       )}
       <Environment preset="sunset" />
       {/* Multisampling (MSAA) is WebGL2 antialeasing, we don't need it (faster) */}
