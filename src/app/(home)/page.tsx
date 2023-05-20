@@ -38,6 +38,9 @@ async function Home() {
       <Center>
         <Link href="/envmap-ground">envmap ground</Link>
       </Center>
+      <Center>
+        <Link href="/live-envmap">live envmap</Link>
+      </Center>
     </Center>
   )
 }

@@ -127,8 +127,8 @@ function Scene({ dof }: { dof?: any }) {
               key={i}
               ref={ref}
             >
-              {/* @ts-ignore */}
               <layerMaterial
+                //  @ts-ignore
                 movement={movement}
                 textr={texture}
                 factor={factor}
