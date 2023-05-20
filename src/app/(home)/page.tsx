@@ -18,16 +18,19 @@ async function Home() {
         <Link href="/banana">banana</Link>
       </Center>
       <Center>
-        <Link href="/ghibli-tree">ghibli-tree</Link>
+        <Link href="/ghibli-tree">ghibli tree</Link>
       </Center>
       <Center>
-        <Link href="/scroll-controls">scroll-controls</Link>
+        <Link href="/scroll-controls">scroll controls</Link>
       </Center>
       <Center>
-        <Link href="/stage-presets">stage-presets</Link>
+        <Link href="/stage-presets">stage presets</Link>
       </Center>
       <Center>
-        <Link href="/camera-scroll">camera-scroll</Link>
+        <Link href="/camera-scroll">camera scroll</Link>
+      </Center>
+      <Center>
+        <Link href="/floating-laptop">floating laptop</Link>
       </Center>
     </Center>
   )
