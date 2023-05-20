@@ -25,6 +25,7 @@
     "@react-three/fiber": "^8.13.0",
     "@react-three/postprocessing": "^2.11.4",
     "@types/three": "^0.152.0",
+    "lamina": "^1.1.23",
     "leva": "^0.9.34",
     "meshline": "^3.1.6",
     "next": "^13.4.1",

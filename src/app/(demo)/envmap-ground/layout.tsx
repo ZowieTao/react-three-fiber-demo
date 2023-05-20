@@ -1,6 +1,6 @@
 import "~/css/envmap-ground.css"
 
-export default function FloatingLaptopLayout({
+export default function EnvmapGroundLayout({
   children,
 }: {
   children?: React.ReactNode

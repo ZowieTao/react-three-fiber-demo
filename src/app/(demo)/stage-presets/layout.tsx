@@ -26,7 +26,7 @@ export default function ScrollControlsLayout({
   )
 }
 
-function Overlay() {
+export function Overlay() {
   return (
     <div
       style={{
