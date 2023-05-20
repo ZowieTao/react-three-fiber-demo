@@ -35,6 +35,9 @@ async function Home() {
       <Center>
         <Link href="/zustand-bear">zustand bear</Link>
       </Center>
+      <Center>
+        <Link href="/envmap-ground">envmap ground</Link>
+      </Center>
     </Center>
   )
 }
