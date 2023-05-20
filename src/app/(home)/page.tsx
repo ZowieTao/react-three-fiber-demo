@@ -41,6 +41,9 @@ async function Home() {
       <Center>
         <Link href="/live-envmap">live envmap</Link>
       </Center>
+      <Center>
+        <Link href="/apartment">apartment</Link>
+      </Center>
     </Center>
   )
 }
